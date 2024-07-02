@@ -1,8 +1,15 @@
 package com.apisarek.models;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class LoginModel {
 
+	@NotNull(message = "Username can't be null")
+	@Size(min=3, max=15, message="Username must be between 3 and 15 character.")
 	private String username;
+	@NotNull(message = "Password can't be null")
+	@Size(min=3, max=10, message="Password must be between 3 and 10 character")
 	private String password;
 
 	

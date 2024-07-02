@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login Form</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<form action="#" method="post" th:action="@{processLogin}" th:object="${loginModel}">
+		<section class="vh-100" style="background-color: #508bfc;">
+			<div class="container py-5 h-100">
+				<div
+					class="row d-flex justify-content-center align-items-center h-100">
+					<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+						<div class="card shadow-2-strong" style="border-radius: 1rem;">
+							<div class="card-body p-5 text-center">
+
+								<h3 class="mb-5">Sign in</h3>
+
+								<div data-mdb-input-init class="form-outline mb-4">
+									<input th:field="*{username} "type="text" id="username"
+										class="form-control form-control-lg" /> <label
+										class="form-label" for="username">User Name</label>
+										<p class="alert alert-danger" th:if="${#fields.hasError('username')}" th:errors="*{username}">User name Error</p>
+								</div>
+
+								<div data-mdb-input-init class="form-outline mb-4">
+									<input th:field="*{password}" type="text" id="password"
+										class="form-control form-control-lg" /> <label
+										class="form-label" for="password">Password</label>
+										<p class="alert alert-danger" th:if="${#fields.hasError('password')}" th:errors="*{password}">Password Error</p>
+								</div>
+
+
+
+								<button data-mdb-button-init data-mdb-ripple-init
+									class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+
+								<hr class="my-4">
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+	</form>
+</body>
+</html>
